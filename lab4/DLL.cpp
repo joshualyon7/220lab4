@@ -60,7 +60,7 @@ DLL::DLL(int x){  // constructor, initializes a list with one new node with data
 	DNode *n = new DNode (x);
 	first = n;
 	last = n;
-	size=1;
+	size = 1;
 }
 /***************************************************************************************************/
 /*Part 1																																		*/
@@ -87,6 +87,8 @@ void DLL::push(int x){
 	size++;
 }
 
+
+
 int DLL::pop(){
 	DNode *tmp = last;
 	int retDat = tmp->data;
@@ -94,11 +96,13 @@ int DLL::pop(){
 		cout << "first dat:" << first->data << ", last dat:" << last->data << "retDat = " << retDat << endl;
 	}
 	last = last->prev;
-	last->next = NULL;
 	delete tmp;
+	last->next = NULL;
 	size--;
 	return retDat;
-}
+ }
+
+
 
 void DLL::addAtFront(int x){
 	DNode *n = new DNode(x);

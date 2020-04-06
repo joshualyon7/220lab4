@@ -17,16 +17,16 @@ void pointerfunc(int *x);
 
 int main() {
 	Coder code;
-//	int k = 2;
-//	valuefunc(k);
-//	cout << k << endl;
-//	k = 5;
-//	referencefunc(k);
-//	cout << k << endl;
-//	k = 1;
-//
-//	pointerfunc(&k);
-//	cout << k << endl;
+	int k = 2;
+	valuefunc(k);
+	cout << k << endl;
+	k = 5;
+	referencefunc(k);
+	cout << k << endl;
+	k = 1;
+
+	pointerfunc(&k);
+	cout << k << endl;
 
 }
 
