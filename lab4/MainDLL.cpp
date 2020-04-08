@@ -24,7 +24,6 @@ int main() {
 	referencefunc(k);
 	cout << k << endl;
 	k = 1;
-
 	pointerfunc(&k);
 	cout << k << endl;
 

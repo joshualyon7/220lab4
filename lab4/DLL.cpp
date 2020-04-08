@@ -92,8 +92,12 @@ void DLL::push(int x){
 int DLL::pop(){
 	DNode *tmp = last;
 	int retDat = tmp->data;
-	if (size == 1){
-		cout << "first dat:" << first->data << ", last dat:" << last->data << "retDat = " << retDat << endl;
+	if(last->prev == NULL){
+		last = NULL;
+		first = NULL;
+		delete tmp;
+		size--;
+		return retDat;
 	}
 	last = last->prev;
 	delete tmp;
@@ -125,6 +129,14 @@ void DLL::addAtFront(int x){
 /* write insertAt, removeAtK  here */
 
 void DLL::insertAt(int ind, int x){
+	if(ind == 0){
+		addAtFront(x);
+		return;
+	}
+	if(ind == size){
+		push(x);
+		return;
+	}
 	DNode *n = new DNode(x);
 	int ct = 0;
 	DNode *tmp = first;
@@ -132,17 +144,14 @@ void DLL::insertAt(int ind, int x){
 		tmp = tmp->next;
 		ct++;
 	}
-	if(tmp->next == NULL){
-		n->prev = tmp;
-		tmp->next = n;
-	}
-	else{
-		n->prev = tmp->prev;
-		tmp->prev->next = n;
-		n->next = tmp;
-		tmp->prev = n;
-		size++;
-	}
+
+	n->prev = tmp->prev;
+	tmp->prev->next = n;
+	n->next = tmp;
+	tmp->prev = n;
+	size++;
+	return;
+
 }
 
 int DLL::removeAtK(int ind){
@@ -152,11 +161,20 @@ int DLL::removeAtK(int ind){
 		tmp = tmp->next;
 		ct++;
 	}
-	if(ct == 0){//check if deleting the first one
+	if(ind == 0){//check if deleting the first one
+		retDat = first->data;
 		first = tmp->next;
+		if(size == 1){
+			delete tmp;
+			size--;
+			return retDat;
+		}
 		first->prev = NULL;
+		delete tmp;
+		size--;
+		return retDat;
 	}
-	if(ct == size){//check if deleting the last one
+	if(ind == size-1){//check if deleting the last one
 		last = tmp->prev;
 		tmp->prev->next = NULL;
 	}
@@ -174,9 +192,25 @@ int DLL::removeAtK(int ind){
 /* Part 3                                                                                                                       */
 /****************************************************************************************/
 /* write reverse here */
-
-
 void DLL::reverse(){
+	DNode *tmp1 = first, *tmp2 = first, *tmp3 = last;
+	first = last;
+	tmp2->next = NULL;
+	first->next = tmp1->next;
+	tmp1->next->prev = first;
+	last->prev->next = tmp2;
+	tmp2->prev = last->prev;
+	last = tmp2;
+	first->prev = NULL;
+	int ct = 0;
+	while(ct != (int)size/2){
+		tmp1 = tmp1->next;
+		tmp2->prev = tmp1;
+
+		tmp2->prev->next = tmp2;
+		tmp1->next->prev = tmp1;
+		tmp2 = tmp2->prev;
+	}
 
 }
 /****************************************************************************************/

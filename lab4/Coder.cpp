@@ -46,9 +46,7 @@ Coder::Coder() {
 	int arra[1] = {26};
 	int arrb[10] = {30,35,27,44,32,27,26,39,57,8};
 	int arrc[23] = {8, 26, 29, 27, 40, 57, 46, 26, 30, 41, 26, 46, 34, 27, 46, 26, 3, 27,48,31,12,17,2};
-	cout << "gets below arrays"<< endl;
 	makeList(arra,1);
-	cout << "makes list arra" << endl;
 	for (int i = 0; i < 10; i++) {
 		codelist.push(arrc[i]);
 		codelist.addAtFront(arrb[i]);
@@ -59,7 +57,6 @@ Coder::Coder() {
 	for (int i=0; i < 3; i++) {
 		codelist.pop();
 	}
-	cout << "below for loops" << endl;
 	codelist.printCode();
 	codelist.printList();
 	int darr[0];
@@ -69,50 +66,51 @@ Coder::Coder() {
 ////		Part 2: Get  the DLL.cpp methods insertAt and removeAtK methods working for a doubly linked list.
 ////		I've given you the test cases and the output.  When you get them working, you should be able to run
 ////		this and decode the second secret code
-//	cout << "Part 2 Testing:" << endl;
-//	codelist.addFirst(0);
-//	codelist.printList();
-//	codelist.insertAt(1,1);
-//	codelist.printList();
-//	codelist.insertAt(2,3);
-//	codelist.printList();
-//	codelist.insertAt(2,2);
-//	codelist.printList();
-//	codelist.push(4);
-//	codelist.printList();
-//	codelist.insertAt(2,42);
-//	codelist.printList();
-//	codelist.removeAtK(2);
-//	codelist.printList();
-//	codelist.removeAtK(0);
-//	codelist.printList();
-//	codelist.removeAtK(3);
-//	codelist.printList();
-//	codelist.removeAtK(0);
-//	codelist.printList();
-//	codelist.removeAtK(1);
-//	codelist.printList();
-//	codelist.removeAtK(0);
-//	codelist.printList();
+	cout << "Part 2 Testing:" << endl;
+	codelist.addFirst(0);
+	codelist.printList();
+	codelist.insertAt(1,1);
+	codelist.printList();
+	codelist.insertAt(2,3);
+	codelist.printList();
+	codelist.insertAt(2,2);
+	codelist.printList();
+	codelist.push(4);
+	codelist.printList();
+	codelist.insertAt(2,42);
+	codelist.printList();
+	codelist.removeAtK(2);
+	codelist.printList();
+	codelist.removeAtK(0);
+	codelist.printList();
+	codelist.removeAtK(3);
+	codelist.printList();
+	codelist.removeAtK(0);
+	codelist.printList();
+	codelist.removeAtK(1);
+	codelist.printList();
+	codelist.removeAtK(0);
+	codelist.printList();
 	/******************************/
 	cout <<endl<< "PART 2 Secret Code: " << endl;
-//	int arrd[19] = {20, 45, 31, 26, 46, 34, 31, 26, 32, 41, 44, 29, 31, 53, 26, 11, 47, 37, 31};
-//	codelist.addFirst(32);
-//	for (int i = 0; i < 10; i++) {
-//		codelist.push(i);
-//	}
-//	for (int i = 1; i < 11; i++) {
-//		codelist.insertAt(i*2,arrd[i]);
-//	}
-//	for (int i = 11; i< 19; i++) {
-//		codelist.push(arrd[i]);
-//	}
-//	codelist.removeAtK(0);
-//	codelist.insertAt(0,20);
-//	for (int i = 19; i >= 1; i-=2) {
-//		codelist.removeAtK(i);
-//	}
-//	codelist.printCode();
+	int arrd[19] = {20, 45, 31, 26, 46, 34, 31, 26, 32, 41, 44, 29, 31, 53, 26, 11, 47, 37, 31};
+	codelist.addFirst(32);
+	for (int i = 0; i < 10; i++) {
+		codelist.push(i);
+	}
+	for (int i = 1; i < 11; i++) {
+		codelist.insertAt(i*2,arrd[i]);
+	}
+	for (int i = 11; i< 19; i++) {
+		codelist.push(arrd[i]);
+	}
+	codelist.removeAtK(0);
+	codelist.insertAt(0,20);
+	for (int i = 19; i >= 1; i-=2) {
+		codelist.removeAtK(i);
+	}
+	cout << "CODE: ";
+	codelist.printCode();
 	cout << "*****************************************************************" << endl;
 //	cout << "Part 3: "<<endl;
 //	//		Part 3: For this part, you will get the method reverse working for the DLL doubly linked list class.
@@ -259,7 +257,6 @@ void Coder::makeList(int arr[], int size) {
 	while (codelist.size > 0) {
 		codelist.pop();
 	}
-	cout << "while loop ended" << endl;
 	for (int i = 0; i < size; i++) {
 		codelist.push(arr[i]);
 	}
