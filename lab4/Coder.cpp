@@ -7,7 +7,7 @@
 
 
 #include "Coder.hpp"
-//#include <DLL.hpp>
+#include "DLL.hpp"
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
