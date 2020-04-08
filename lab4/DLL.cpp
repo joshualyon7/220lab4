@@ -125,11 +125,49 @@ void DLL::addAtFront(int x){
 /* write insertAt, removeAtK  here */
 
 void DLL::insertAt(int ind, int x){
-
+	DNode *n = new DNode(x);
+	int ct = 0;
+	DNode *tmp = first;
+	while (ct != ind && tmp->next != NULL){
+		tmp = tmp->next;
+		ct++;
+	}
+	if(tmp->next == NULL){
+		n->prev = tmp;
+		tmp->next = n;
+	}
+	else{
+		n->prev = tmp->prev;
+		tmp->prev->next = n;
+		n->next = tmp;
+		tmp->prev = n;
+		size++;
+	}
 }
 
 int DLL::removeAtK(int ind){
-	return 0;
+	int retDat, ct=0;
+	DNode *tmp = first;
+	while (ct != ind){
+		tmp = tmp->next;
+		ct++;
+	}
+	if(ct == 0){//check if deleting the first one
+		first = tmp->next;
+		first->prev = NULL;
+	}
+	if(ct == size){//check if deleting the last one
+		last = tmp->prev;
+		tmp->prev->next = NULL;
+	}
+	else{
+		tmp->prev->next = tmp->next;
+		tmp->next->prev = tmp->prev;
+	}
+	retDat = tmp->data;
+	delete tmp;
+	size--;
+	return retDat;
 }
 
 /****************************************************************************************/
@@ -181,11 +219,13 @@ void DLL::printCode() {
 	cout << endl;
 }
 DLL::~DLL(){
-	DNode *tmp = first;
-	DNode *tmp2 = first->next;
-	while (tmp != NULL) {
-		delete tmp;
-		tmp = tmp2;
-		tmp2 = tmp2->next;
-	}
+        DNode *tmp = first;
+        DNode *tmp2 = first->next;
+        while (tmp != NULL) {
+                delete tmp;
+                tmp = tmp2;
+                if (tmp != NULL) {
+                        tmp2 = tmp2->next;
+                }
+        }
 }
