@@ -112,33 +112,33 @@ Coder::Coder() {
 	cout << "CODE: ";
 	codelist.printCode();
 	cout << "*****************************************************************" << endl;
-//	cout << "Part 3: "<<endl;
-//	//		Part 3: For this part, you will get the method reverse working for the DLL doubly linked list class.
-//	//		This method reverses the list.  Note: it doesn't just print out the list in reverse order, it actually
-//	//		reverses the list, so if the original list was 3<->2<->4<->8, with 3 being first and 8 being last, the
-//	//		reversed list would be 8<->4<->2<->3 with 8 being first and 3 being last.
-//	makeList(darr,0);
-//	cout << "Part 3 Testing:" << endl;
-//	for (int i = 0; i< 7; i++){
-//		codelist.push(i);
-//	}
-//	codelist.printList();
-//	codelist.reverse();
-//	codelist.printList();
-//	codelist.reverse();
-//	codelist.printList();
-///**************************/
-////	cout <<endl<< "PART 3 Secret Code: " << endl;
-////	for (int i = 0; i < 7; i++) {
-////		codelist.pop();
-////	}
-////	int arrf[13] = {54, 46, 41, 41, 44, 6, 26, 31, 44, 27, 26, 31, 22};
-////	for (int i = 0; i < 13; i++) {
-////		codelist.push(arrf[i]);
-////	}
-////	codelist.reverse();
-////	codelist.printCode();
-//	cout << "*****************************************************************" << endl;
+	cout << "Part 3: "<<endl;
+	//		Part 3: For this part, you will get the method reverse working for the DLL doubly linked list class.
+	//		This method reverses the list.  Note: it doesn't just print out the list in reverse order, it actually
+	//		reverses the list, so if the original list was 3<->2<->4<->8, with 3 being first and 8 being last, the
+	//		reversed list would be 8<->4<->2<->3 with 8 being first and 3 being last.
+	makeList(darr,0);
+	cout << "Part 3 Testing:" << endl;
+	for (int i = 0; i< 7; i++){
+		codelist.push(i);
+	}
+	codelist.printList();
+	codelist.reverse();
+	codelist.printList();
+	codelist.reverse();
+	codelist.printList();
+/**************************/
+	cout <<endl<< "PART 3 Secret Code: " << endl;
+	for (int i = 0; i < 7; i++) {
+		codelist.pop();
+	}
+	int arrf[13] = {54, 46, 41, 41, 44, 6, 26, 31, 44, 27, 26, 31, 22};
+	for (int i = 0; i < 13; i++) {
+		codelist.push(arrf[i]);
+	}
+	codelist.reverse();
+	codelist.printCode();
+	cout << "*****************************************************************" << endl;
 //	cout << "Part 4: "<<endl;
 //////		Part 4: For this part, you will write the method removeX, which removes the first
 ////// 		occurrence of x from the list and, using call by pointer, sets ind to be the index

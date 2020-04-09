@@ -192,7 +192,7 @@ int DLL::removeAtK(int ind){
 /* Part 3                                                                                                                       */
 /****************************************************************************************/
 /* write reverse here */
-void DLL::reverse(){
+/*void DLL::reverse(){
 	DNode *tmp1 = first, *tmp2 = first, *tmp3 = last;
 	first = last;
 	tmp2->next = NULL;
@@ -212,6 +212,20 @@ void DLL::reverse(){
 		tmp2 = tmp2->prev;
 	}
 
+}*/
+void DLL::reverse(){
+	DNode *tmp1, *tmp2;
+	tmp2 = first;
+	last = first;
+	while(tmp2 != NULL){
+		tmp1 = tmp2->prev;
+		tmp2->prev = tmp2->next;
+		tmp2->next = tmp1;
+		tmp2 = tmp2->prev;
+	}
+	if(tmp1 != NULL){
+		first = tmp1->prev;
+	}
 }
 /****************************************************************************************/
 /* Part 4                                                                                                                       */
