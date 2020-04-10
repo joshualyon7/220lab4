@@ -139,84 +139,84 @@ Coder::Coder() {
 	codelist.reverse();
 	codelist.printCode();
 	cout << "*****************************************************************" << endl;
-//	cout << "Part 4: "<<endl;
-//////		Part 4: For this part, you will write the method removeX, which removes the first
-////// 		occurrence of x from the list and, using call by pointer, sets ind to be the index
-//////		of the first occurrence of x in the list.
-//////
-//	int arr4[11]={3,33,35,6,44,27,32,32,31,9,1};
-//	makeList(arr4,11);
-//	codelist.printList();
-//	cout << "Part 4 Testing: "<<endl;
-//	int ind;
-//	int k = 6;
-//	cout << "removing: " << k << endl;
-//	codelist.removeX(k, &ind);
-//	cout << "Ind is "<<ind<<endl;
-//	codelist.printList();
-//	k = 3;
-//	cout << "removing: " << k << endl;
-//	codelist.removeX(k,&ind);
-//	cout << "Ind is "<<ind<<endl;
-//	codelist.printList();
-//	k = 0;
-//	cout << "removing: " << k << endl;
-//	codelist.removeX(k,&ind);
-//	cout << "Ind is "<<ind<<endl;
-//	codelist.printList();
-//	k = 1;
-//	cout << "removing: " << k << endl;
-//	codelist.removeX(k,&ind);
-//	cout << "Ind is "<<ind<<endl;
-//	codelist.printList();
-//	k = 9;
-//	cout << "removing: " << k << endl;
-//	codelist.removeX(k,&ind);
-//	cout << "Ind is "<<ind<<endl;
-//	codelist.printList();
-//	codelist.printCode();
-//
-//	/******************************/
-////	cout << "Part 4 Secret Code:" << endl;
+	cout << "Part 4: "<<endl;
+////		Part 4: For this part, you will write the method removeX, which removes the first
+//// 		occurrence of x from the list and, using call by pointer, sets ind to be the index
+////		of the first occurrence of x in the list.
 ////
-////	int arry[100] = {85,82,21,28,17,1, 98,62,92,76,
-////					 46,91,71,27,32,56,6, 36,60,39,
-////					 35,43,51,2, 95,5, 87,9, 61,74,
-////					 14,70,54,24,84,4, 44,53,20,7,
-////					 72,96,8 ,90,55,86,59,57,97,93,
-////					 42,83,47,99,80,73,89,3 ,40,13,
-////					 26,18,64,67,48,45,52,15,22,41,
-////					 88,34,25,31,81,50,49,94,69,77,
-////					 16,23,12,29,75,30,38,11,78,37,
-////					 63,10,65,58,99,19,33,79,68,66};
-////	makeList(arry,100);
-////	int remarr[10] = {74,87,61,96,8,90,86,85,64,52};
-////	int blankarr[10];
-////	int currind;
-////	for (int k = 0; k < 10; k++) {
-////		codelist.removeX(remarr[k],&currind);
-////		blankarr[k] = currind;
-////	}
-////	int arrs[230]={44,35,33,34,46,53,57,26,45,27,35,30,26,3 ,31,31,42,26,19,34,
-////				   41,47,33,34,46,54,26,57,19,34,31,26,0, 40,45,49,31,44,26,46,
-////				   41,26,46,34,31,26,6, 44,31,27,46,26,16,47,31,45,46,35,41,40,
-////				   54,54,54,14,32,26,11,35,32,31,53,26,46,34,31,26,20,40,35,48,
-////				   31,44,45,31,26,27,40,30,26,4, 48,31,44,51,46,34,35,40,33,54,
-////				   54,54,57,26,45,27,35,30,26,3, 31,31,42,26,19,34,41,47,33,34,
-////				   46,26,57,54,54,54,8, 45,54,54,54,57,26,45,27,35,30,26,3, 31,
-////				   31,42,26,19,34,41,47,33,34,46,53,26,27,40,30,26,42,27,47,45,
-////				   31,30,54,26,57,54,54,54,8, 45,54,54,54,5, 41,44,46,51,26,19,
-////				   49,41,53,57,26,45,27,35,30,26,3 ,31,31,42,26,19,34,41,47,33,
-////				   34,46,53,26,49,35,46,34,26,35,40,32,35,40,35,46,31,26,39,27,
-////				   36,31,45,46,51,26,27,40,30,26};
-////	makeList(arrs,230);
-////	for (int k = 0; k < 10; k+=2) {
-////		codelist.push(blankarr[k]);
-////		codelist.addAtFront(blankarr[k+1]);
-////	}
-////	codelist.printCode();
-//
-//	cout << "*****************************************************************" << endl;
+	int arr4[11]={3,33,35,6,44,27,32,32,31,9,1};
+	makeList(arr4,11);
+	codelist.printList();
+	cout << "Part 4 Testing: "<<endl;
+	int ind;
+	int k = 6;
+	cout << "removing: " << k << endl;
+	codelist.removeX(k, &ind);
+	cout << "Ind is "<<ind<<endl;
+	codelist.printList();
+	k = 3;
+	cout << "removing: " << k << endl;
+	codelist.removeX(k,&ind);
+	cout << "Ind is "<<ind<<endl;
+	codelist.printList();
+	k = 0;
+	cout << "removing: " << k << endl;
+	codelist.removeX(k,&ind);
+	cout << "Ind is "<<ind<<endl;
+	codelist.printList();
+	k = 1;
+	cout << "removing: " << k << endl;
+	codelist.removeX(k,&ind);
+	cout << "Ind is "<<ind<<endl;
+	codelist.printList();
+	k = 9;
+	cout << "removing: " << k << endl;
+	codelist.removeX(k,&ind);
+	cout << "Ind is "<<ind<<endl;
+	codelist.printList();
+	codelist.printCode();
+
+	/******************************/
+	cout << "Part 4 Secret Code:" << endl;
+
+	int arry[100] = {85,82,21,28,17,1, 98,62,92,76,
+					 46,91,71,27,32,56,6, 36,60,39,
+					 35,43,51,2, 95,5, 87,9, 61,74,
+					 14,70,54,24,84,4, 44,53,20,7,
+					 72,96,8 ,90,55,86,59,57,97,93,
+					 42,83,47,99,80,73,89,3 ,40,13,
+					 26,18,64,67,48,45,52,15,22,41,
+					 88,34,25,31,81,50,49,94,69,77,
+					 16,23,12,29,75,30,38,11,78,37,
+					 63,10,65,58,99,19,33,79,68,66};
+	makeList(arry,100);
+	int remarr[10] = {74,87,61,96,8,90,86,85,64,52};
+	int blankarr[10];
+	int currind;
+	for (int k = 0; k < 10; k++) {
+		codelist.removeX(remarr[k],&currind);
+		blankarr[k] = currind;
+	}
+	int arrs[230]={44,35,33,34,46,53,57,26,45,27,35,30,26,3 ,31,31,42,26,19,34,
+				   41,47,33,34,46,54,26,57,19,34,31,26,0, 40,45,49,31,44,26,46,
+				   41,26,46,34,31,26,6, 44,31,27,46,26,16,47,31,45,46,35,41,40,
+				   54,54,54,14,32,26,11,35,32,31,53,26,46,34,31,26,20,40,35,48,
+				   31,44,45,31,26,27,40,30,26,4, 48,31,44,51,46,34,35,40,33,54,
+				   54,54,57,26,45,27,35,30,26,3, 31,31,42,26,19,34,41,47,33,34,
+				   46,26,57,54,54,54,8, 45,54,54,54,57,26,45,27,35,30,26,3, 31,
+				   31,42,26,19,34,41,47,33,34,46,53,26,27,40,30,26,42,27,47,45,
+				   31,30,54,26,57,54,54,54,8, 45,54,54,54,5, 41,44,46,51,26,19,
+				   49,41,53,57,26,45,27,35,30,26,3 ,31,31,42,26,19,34,41,47,33,
+				   34,46,53,26,49,35,46,34,26,35,40,32,35,40,35,46,31,26,39,27,
+				   36,31,45,46,51,26,27,40,30,26};
+	makeList(arrs,230);
+	for (int k = 0; k < 10; k+=2) {
+		codelist.push(blankarr[k]);
+		codelist.addAtFront(blankarr[k+1]);
+	}
+	codelist.printCode();
+
+	cout << "*****************************************************************" << endl;
 //	cout << "Part 5: "<<endl;
 //////		Part 5: For this part, you will get the method skip working for the DLL doubly linked list class.
 //////		This method deletes every other node starting with the second node in the list.  In other words,

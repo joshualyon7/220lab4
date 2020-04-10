@@ -192,27 +192,7 @@ int DLL::removeAtK(int ind){
 /* Part 3                                                                                                                       */
 /****************************************************************************************/
 /* write reverse here */
-/*void DLL::reverse(){
-	DNode *tmp1 = first, *tmp2 = first, *tmp3 = last;
-	first = last;
-	tmp2->next = NULL;
-	first->next = tmp1->next;
-	tmp1->next->prev = first;
-	last->prev->next = tmp2;
-	tmp2->prev = last->prev;
-	last = tmp2;
-	first->prev = NULL;
-	int ct = 0;
-	while(ct != (int)size/2){
-		tmp1 = tmp1->next;
-		tmp2->prev = tmp1;
 
-		tmp2->prev->next = tmp2;
-		tmp1->next->prev = tmp1;
-		tmp2 = tmp2->prev;
-	}
-
-}*/
 void DLL::reverse(){
 	DNode *tmp1, *tmp2;
 	tmp2 = first;
@@ -233,7 +213,42 @@ void DLL::reverse(){
 /* write removeX here */
 	
 void DLL::removeX(int x, int* ind){
-	
+	int ct = 0;
+	DNode *cur = first;
+	while (true){
+		if(cur->data == x){
+			if(cur->prev == NULL){
+				cur->next->prev = NULL;
+				first = cur->next;
+				size--;
+				*ind = ct;
+				delete cur;
+				return;
+			}
+			if(cur->next == NULL){
+				cur->prev->next = NULL;
+				last = cur->prev;
+				size--;
+				*ind = ct;
+				delete cur;
+				return;
+			}
+			else{
+				cur->prev->next = cur->next;
+				cur->next->prev = cur->prev;
+				size--;
+				delete cur;
+				*ind = ct;
+				return;
+			}
+		}
+		if(cur->next == NULL){
+			cout << "x doesnt exist in list :(" << endl;
+			return;
+		}
+		cur = cur->next;
+		ct++;
+	}
 }
 
 /****************************************************************************************/
