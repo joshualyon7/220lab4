@@ -257,6 +257,48 @@ void DLL::removeX(int x, int* ind){
 /* write skip here */
 
 void DLL::skip(bool flag, int ct, DNode *tmp){
+	if(tmp == NULL){
+		return;
+	}
+	if(ct == 0){
+		if(!flag){
+			tmp = first->next;
+			DNode *tmp2 = tmp->next->next;
+			tmp->next->prev = first;
+			first->next = tmp->next;
+			delete tmp;
+			size --;
+			skip(flag, ct + 1, tmp2);
+		}
+		else {
+			tmp = first;
+			DNode *tmp2 = tmp->next->next;
+			tmp->next->prev = tmp->prev;
+			first = tmp->next;
+			delete tmp;
+			size --;
+			skip(flag, ct + 1, tmp2);
+		}
+	}
+	else{
+		if(tmp->next == NULL){
+			tmp->prev->next = NULL;
+			last = tmp->prev;
+			delete tmp;
+			size --;
+			skip(flag, ct + 1, NULL);
+
+		}
+		else{
+			DNode *tmp2 = tmp->next->next;
+			tmp->prev->next = tmp->next;
+			tmp->next->prev = tmp->prev;
+			delete tmp;
+			size --;
+			skip(flag, ct + 1, tmp2);
+		}
+
+	}
 
 }
 
