@@ -43,7 +43,11 @@
 //2<->5<->7
 //NOTE:  For efficiency's sake, this method SHOULD NOT call removeAtK
 
-
+/*
+ * lab 4 - dll mini-lab
+ * natalie konschnik & joshua lyon
+ * ta - lauren olson
+ */
 
 #include "DNode.hpp"
 #include "DLL.hpp"
@@ -56,16 +60,20 @@ DLL::DLL(){  // constructor - initializes an empty list
 	first = NULL;
 	size = 0;
 }
+
 DLL::DLL(int x){  // constructor, initializes a list with one new node with data x
 	DNode *n = new DNode (x);
 	first = n;
 	last = n;
 	size = 1;
 }
+
 /***************************************************************************************************/
 /*Part 1																																		*/
 /***************************************************************************************************/
 /* write push, pop, addAtFront */
+
+//adds the first element (node with data x) to the list, returns nothing
 void DLL::addFirst(int x){
 	DNode *n = new DNode(x);
 	first = n;
@@ -73,6 +81,7 @@ void DLL::addFirst(int x){
 	size = 1;
 }
 
+//adds a node with data x to the end of the list, returns nothing
 void DLL::push(int x){
 	DNode *n = new DNode(x);
 	if(size == 0){
@@ -87,8 +96,7 @@ void DLL::push(int x){
 	size++;
 }
 
-
-
+//deletes the last element off of the list, returns the data of the deleted node
 int DLL::pop(){
 	DNode *tmp = last;
 	int retDat = tmp->data;
@@ -104,10 +112,9 @@ int DLL::pop(){
 	last->next = NULL;
 	size--;
 	return retDat;
- }
+}
 
-
-
+//adds a node with data x to the front of the list, returns nothing
 void DLL::addAtFront(int x){
 	DNode *n = new DNode(x);
 	if(size == 0){
@@ -122,12 +129,12 @@ void DLL::addAtFront(int x){
 	size++;
 }
 
-
 /***************************************************************************************************/
 /*Part 2																																		*/
 /***************************************************************************************************/
 /* write insertAt, removeAtK  here */
 
+//inserts a node with data x at index ind, returns nothing
 void DLL::insertAt(int ind, int x){
 	if(ind == 0){
 		addAtFront(x);
@@ -154,6 +161,7 @@ void DLL::insertAt(int ind, int x){
 
 }
 
+//removes the node at index ind, returns nothing
 int DLL::removeAtK(int ind){
 	int retDat, ct=0;
 	DNode *tmp = first;
@@ -193,6 +201,7 @@ int DLL::removeAtK(int ind){
 /****************************************************************************************/
 /* write reverse here */
 
+//reverses the list, returns nothing
 void DLL::reverse(){
 	DNode *tmp1, *tmp2;
 	tmp2 = first;
@@ -207,11 +216,13 @@ void DLL::reverse(){
 		first = tmp1->prev;
 	}
 }
+
 /****************************************************************************************/
 /* Part 4                                                                                                                       */
 /****************************************************************************************/
 /* write removeX here */
 	
+//removes the node with data x, changes the value of ind to the index of that node. returns nothing.
 void DLL::removeX(int x, int* ind){
 	int ct = 0;
 	DNode *cur = first;
@@ -256,6 +267,8 @@ void DLL::removeX(int x, int* ind){
 /****************************************************************************************/
 /* write skip here */
 
+//removes every other node of the list recursively, removing all of the even
+//elements if flag is true, odds otherwise. returns nothing
 void DLL::skip(bool flag, int ct, DNode *tmp){
 	if(tmp == NULL){
 		return;
@@ -301,7 +314,6 @@ void DLL::skip(bool flag, int ct, DNode *tmp){
 	}
 
 }
-
 
 /***************************************************************************************************/
 /*End of your part																														*/
